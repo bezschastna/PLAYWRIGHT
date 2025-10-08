@@ -16,7 +16,7 @@ test.describe("Sign up verification", () => {
         await page.locator('#signupPassword').fill('123456Qwerty');
         await page.locator('#signupRepeatPassword').fill('123456Qwerty');
         await page.getByRole('button', { name: 'Register' }).click();
-        // await page.waitForTimeout(8000);
+        await page.waitForTimeout(8000);
         await expect(page.getByRole('heading', { name: 'Garage' })).toHaveCount(1);
         await expect(page.locator('#userNavDropdown')).toHaveCount(1)
     })
@@ -24,7 +24,7 @@ test.describe("Sign up verification", () => {
     test('Verify possibility of closing "Registration" dialog', async({page}) => {
         await page.getByRole('button', {name: 'Close'}).click();
         await page.waitForTimeout(500);
-        await expect(page.getByRole('heading', { name: 'Registration' })).toHaveCount(1);
+        await expect(page.getByRole('heading', { name: 'Registration' })).toHaveCount(0);
     })
 
     test('Verify it is impossible to sign up with an existing email', async ({ page }) => {
@@ -49,8 +49,9 @@ test.describe("Sign up verification", () => {
 
     test('Verify there is no error message when entering 2 character in the "Name" field', async({page}) => {
         await page.locator('#signupName').fill('Na');
-       await page.locator('#signupLastName').fill('LastName');
+        await page.locator('#signupName').blur();
 
+        
     })
 
 
