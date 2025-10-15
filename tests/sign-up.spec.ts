@@ -16,7 +16,7 @@ test.describe("Sign up verification", () => {
         signUpForm = new SignUpForm(page);
         garagePage = new GaragePage(page);
 
-        email = `aqa-bezschastna.yuliia+${Date.now()}@gmail.com`
+        email = `aqa-test+${Date.now()}@gmail.com`
 
         await homePage.navigate();
         await homePage.openSignUpForm();
