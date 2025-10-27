@@ -9,6 +9,8 @@ export default class GaragePage extends BasePage {
     public readonly lastAddedCar: Locator = this.page.locator('//li[@class="car-item"]').first();
     private readonly addCarButton: Locator = this.page.getByRole('button', {name: 'Add car'});
     public readonly firstCarInList: Locator = this.page.locator('.car_name').first(); 
+    public readonly userName: Locator = this.page.locator('//p[@class="profile_name display-4"]');
+    public readonly profileSideBar: Locator = this.page.locator('//div[@class="sidebar_btn-group"]/a[@href="/panel/profile"]');
 
     async navigate() {
         await this.page.goto('/panel/garage');
