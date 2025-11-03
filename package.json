@@ -2,7 +2,9 @@
   "name": "playwright",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+    "scripts": {
+      "test": "npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bezschastna/PLAYWRIGHT.git"
@@ -16,7 +18,10 @@
   "homepage": "https://github.com/bezschastna/PLAYWRIGHT#readme",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.55.1",
+    "@playwright/test": "^1.56.1",
     "@types/node": "^24.6.2"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3"
   }
 }
