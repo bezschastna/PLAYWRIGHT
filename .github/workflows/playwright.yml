@@ -6,6 +6,7 @@ on:
     branches: [ main, master, lesson31 ]
 
 env:
+  BASE_URL: ${{ secrets.BASE_URL }}
   USERNAME_HTTP: ${{ secrets.USERNAME_HTTP }}
   PASSWORD_HTTP: ${{ secrets.PASSWORD_HTTP }}
 
